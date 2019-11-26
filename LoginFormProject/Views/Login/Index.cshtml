@@ -1,0 +1,58 @@
+﻿@model LoginFormProject.Models.IDpassword
+@{
+                Layout = null;
+             
+            }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body id="background1">
+    <script src="https://localhost:44359/Scripts/vue.min.js"></script>
+    <script src="https://localhost:44359/Scripts/axios.min.js"></script>
+
+    <div id="login-div">
+        <br />
+        <br />
+        <h1>ACCOUNT LOGIN</h1>
+        <br />
+        <br />
+        <br />
+        <form name="Login">
+            <div class="login">
+                <input class="text-box single-line valid" data-val="true" data-val-required="Account_ID required" id="Account_name" name="Account_name" type="text" placeholder="Input Email/Account Name" v-model="Account_name" required>
+                <br />
+                <span v-for="error in errors1" id="b">{{error}}</span>
+                <span v-for="error1 in error4" id="b">{{error1}}</span>
+                <div>
+                    <input class="text-box single-line password" id="password" name="password" type="password" placeholder="Input Password" v-model="password" required minlength="6" maxlength="20">
+                    <br />
+                    <span v-for="error in errors2" id="b">{{error}}</span>
+                    <span v-for="error1 in error3" id="b"> {{error1}}</span>
+                    <br /><br />
+                </div>
+                <span class="field-validation-error">{{errors}}</span>
+                <br /><br /><br />
+                <buton name="Account" v-on:click="checkForm()" id="loginbutton">
+                    SIGN IN
+                </buton>
+                <br /><br /><br /><br /> <br /><br /> <br />
+
+               
+
+            </div>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
+
+<script src="~/Scripts/Vue/APIconsume.js"></script>

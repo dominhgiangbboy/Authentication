@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<script src="https://localhost:44359/Scripts/vue.min.js"></script>
+<script src="https://localhost:44359/Scripts/axios.min.js"></script>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home Page</title>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div id="Homepage" style='display:none'>
+        <div id="popup">
+
+            <h2>Logged in</h2>
+            <div id="Welcome">
+                <span>Welcome back</span><span>{{Account_name}}</span>
+            </div>
+            <input type="submit" name="submit" value="CLOSE" id="Logout" onClick="PopUp('hide')" />
+            <button id="Logout" onclick="Logout()">LOG OUT</button>
+
+        </div>
+    </div>
+
+
+   
+        <script src="~/Scripts/Homepage/Home.js"></script>
+        <script>
+        function Logout() {
+
+            location.replace("https://localhost:44359/Login/Index");
+            sessionStorage.clear;
+
+        }
+    </script>
+    <script type="text/javascript">
+        function PopUp(hideOrshow) {
+            if (hideOrshow == 'hide') document.getElementById('Homepage').style.display = "none";
+            else document.getElementById('Homepage').removeAttribute('style');
+        }
+        window.onload = function () {
+            setTimeout(function () {
+                PopUp('show');
+            }, 100);
+        }
+
+    </script>
+</body>
+</html>
